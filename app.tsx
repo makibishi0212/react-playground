@@ -1,5 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
+import { PlayGroundEditor } from "./playground";
 import "./playground.css";
 
-render(<div>test</div>, document.querySelector("#playground"));
+render(
+  <PlayGroundEditor></PlayGroundEditor>,
+  document.querySelector("#playground")
+);
