@@ -4,6 +4,10 @@ import { PlayGroundEditor } from "./playground";
 import "./playground.css";
 
 render(
-  <PlayGroundEditor></PlayGroundEditor>,
+  <PlayGroundEditor
+    html={`<div class="hello">Hello PlayGround!</div>`}
+    css={`.hello {\n  background: #f48;\n}`}
+    js={`const elem = document.querySelector(".hello");\nelem.style.color ="#fff";`}
+  ></PlayGroundEditor>,
   document.querySelector("#playground")
 );

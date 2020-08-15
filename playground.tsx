@@ -17,9 +17,24 @@ const htmlSource = atom({ key: "html", default: "" });
 const cssSource = atom({ key: "css", default: "" });
 const jsSource = atom({ key: "js", default: "" });
 
-export const PlayGroundEditor: React.FC<{}> = () => {
+export const PlayGroundEditor: React.FC<{
+  html?: string;
+  css?: string;
+  js?: string;
+}> = (props) => {
   return (
-    <RecoilRoot>
+    <RecoilRoot
+      initializeState={({ set }) => {
+        const defaultHtml = props.html ? props.html : "";
+        set(htmlSource, defaultHtml);
+
+        const defaultCss = props.css ? props.css : "";
+        set(cssSource, defaultCss);
+
+        const defaultJs = props.js ? props.js : "";
+        set(jsSource, defaultJs);
+      }}
+    >
       <div className="playground-render">
         <PlayGroundResult></PlayGroundResult>
         <div className="playground-edit">
