@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { RecoilRoot, useRecoilValue, useRecoilState, atom } from "recoil";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-html";
@@ -51,7 +51,19 @@ const PlayGroundResult: React.FC<{}> = () => {
   const css = useRecoilValue(cssSource);
   const js = useRecoilValue(jsSource);
 
-  const playGroundHtml = createPlayGroundHtml(html, css, js);
+  const [playGroundHtml, setPlayGroundHtml] = useState(
+    createPlayGroundHtml(html, css, js)
+  );
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setPlayGroundHtml(createPlayGroundHtml(html, css, js));
+    }, 2000);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [html, css, js]);
 
   return (
     <div className="playground-result">
