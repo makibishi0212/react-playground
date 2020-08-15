@@ -13,6 +13,6 @@
     "recoil": "0.0.10"
   },
   "scripts": {
-    "build": "parcel build index.html --out-dir docs --public-url ./react-playground/"
+    "build": "parcel build index.html --out-dir docs --public-url ."
   }
 }

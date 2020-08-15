@@ -63,4 +63,4 @@ ace.define("ace/theme/monokai",["require","exports","module","ace/lib/dom"],func
 },{}],"owv9":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var r=e(require("react")),l=require("react-dom"),o=require("./playground");require("./playground.css"),l.render(r.default.createElement(o.PlayGroundEditor,{html:'<div class="hello">Hello PlayGround!</div>',css:".hello {\n  background: #f48;\n}",js:'const elem = document.querySelector(".hello");\nelem.style.color ="#fff";'}),document.querySelector("#playground"));
 },{"react":"HdMw","react-dom":"X9zx","./playground":"yTbO","./playground.css":"ry4o"}]},{},["owv9"], null)
-//# sourceMappingURL=react-playground/app.fb88ac3f.js.map
+//# sourceMappingURL=app.fb88ac3f.js.map
